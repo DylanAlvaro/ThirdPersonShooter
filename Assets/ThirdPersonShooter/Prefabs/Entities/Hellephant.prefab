@@ -302,6 +302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7652804988612349071}
   - component: {fileID: 7652804988603032427}
+  - component: {fileID: 4431105289810143424}
   m_Layer: 0
   m_Name: Hellephant
   m_TagString: Untagged
@@ -335,7 +336,7 @@ Animator:
   m_GameObject: {fileID: 7652804988612382895}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b77f122f451a2394898a24191c26107c, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: c5953dfdb747f684fa52a08adcb3410c, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -344,6 +345,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4431105289810143424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7652804988612382895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d802350f17b4ec3bcc624482291d153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sinkTime: 1
+  sinkAmount: 1
+  parent: {fileID: 8363424617312960475}
 --- !u!1 &7652804988612382897
 GameObject:
   m_ObjectHideFlags: 0

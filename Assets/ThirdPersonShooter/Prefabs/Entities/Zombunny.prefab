@@ -738,6 +738,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4773429266450234875}
   - component: {fileID: 4773429266458006097}
+  - component: {fileID: 5732643425698990981}
   m_Layer: 0
   m_Name: Zombunny
   m_TagString: Untagged
@@ -771,7 +772,7 @@ Animator:
   m_GameObject: {fileID: 4773429266450719195}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: be66986effd141b4992d2d78be127139, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bb008fc7c89419f42863f93463edeff3, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -780,6 +781,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5732643425698990981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4773429266450719195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d802350f17b4ec3bcc624482291d153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sinkTime: 1
+  sinkAmount: 1
+  parent: {fileID: 756088640338749208}
 --- !u!1 &4773429266450719201
 GameObject:
   m_ObjectHideFlags: 0

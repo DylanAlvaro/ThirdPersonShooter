@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 using ThirdPersonShooter.Entities.Player;
 
@@ -38,12 +39,25 @@ namespace ThirdPersonShooter.Entities.AI
 		private void Start()
 		{
 			stats.Start();
+			stats.onDeath += OnDied;
+			stats.onHealthChanged += OnDamaged;
 			agent = gameObject.GetComponent<NavMeshAgent>();
 			agent.speed = stats.Speed;
+			
 			collider = gameObject.GetComponent<CapsuleCollider>();
 
 			player = GameManager.IsValid() ? GameManager.Instance.Player : FindObjectOfType<PlayerEntity>();
+			player.Stats.onDeath += OnPlayerDied;
 		}
+
+		private void OnDestroy()
+		{
+			stats.onDeath -= OnDied;
+			stats.onHealthChanged -= OnDamaged;
+
+			player.Stats.onDeath -= OnPlayerDied;
+		}
+		
 
 		private void Update()
 		{
@@ -51,6 +65,41 @@ namespace ThirdPersonShooter.Entities.AI
 				return;
 
 			agent.SetDestination(player.Position);
+
+			if(Vector3.Distance(player.Position, transform.position) < stats.Range)
+			{
+				if(!isAttackCooling)
+				{
+					player.Stats.TakeDamage(stats.Damage);
+					StartCoroutine(AttackCooldown_CR());
+				}
+			}
+		}
+
+		private IEnumerator AttackCooldown_CR()
+		{
+			isAttackCooling = true;
+
+			yield return new WaitForSeconds(stats.AttackRate);
+
+			isAttackCooling = false;
+		}
+
+		private void OnDamaged(float _health) => hurtSource.Play();
+		
+		private void OnDied()
+		{
+			animator.SetTrigger(deadHash);
+			collider.enabled = false;
+			deathSource.Play();
+			player.AddScore(value);
+		}
+
+		private void OnPlayerDied()
+		{
+			animator.SetTrigger(playerDeadHash);
+			isPlayerDead = true;
+			agent.ResetPath();
 		}
 	}
 }

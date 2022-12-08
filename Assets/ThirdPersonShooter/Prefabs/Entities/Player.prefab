@@ -41,7 +41,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5244191731213358076, guid: 46d77e9b7cff41a44ae2e1bd1bd092a9, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9922a12f34d0a084aab32de985459723, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -136,6 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1119156724703932464}
+  - component: {fileID: 189144805391473821}
   m_Layer: 3
   m_Name: Weapon
   m_TagString: Player
@@ -157,6 +158,21 @@ Transform:
   m_Father: {fileID: 5076746969123962324}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &189144805391473821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2257000417678063684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fbd1356f05e4b44a6b674ec1ea89453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootAction: {fileID: 5020907112476333658, guid: 99eb3f0e8b4a2874399e369815897b34, type: 3}
+  shootPoint: {fileID: 6250895168578629710}
+  bulletLine: {fileID: 1317145591179178674, guid: e2a62533fade83542b675477b19e368e, type: 3}
 --- !u!1 &2438669993611329679
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,6 +410,7 @@ MonoBehaviour:
     attackRate: 0.25
   pauseAction: {fileID: -328822435072014644, guid: 99eb3f0e8b4a2874399e369815897b34, type: 3}
   input: {fileID: 5076746967992192205}
+  weapon: {fileID: 189144805391473821}
   hurtSource: {fileID: 7745998744866791270}
   deathSource: {fileID: 8787283856802228430}
 --- !u!54 &120273108373775537
@@ -1056,7 +1073,7 @@ Animator:
   m_GameObject: {fileID: 6250895168578399270}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: f1d84cc28597f5641a3d9cbc4df7e306, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 689e832c746e9e749b06b933e30c8dc4, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -2912,7 +2929,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5244191731213358076, guid: 46d77e9b7cff41a44ae2e1bd1bd092a9, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d36a393bca4582043982db9089e1694f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

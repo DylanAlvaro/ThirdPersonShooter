@@ -8,12 +8,14 @@ namespace ThirdPersonShooter.UI
 		
 		public override void OnOpenMenu(UIManager _manager)
 		{
+			Time.timeScale = 0;
 			Cursor.visible = true;
 			Cursor.lockState = CursorLockMode.None;
 		}
 
 		public override void OnCloseMenu(UIManager _manager)
 		{
+			Time.timeScale = 1;
 			Cursor.visible = false;
 			Cursor.lockState = CursorLockMode.Locked;
 		}
